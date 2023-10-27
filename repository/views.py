@@ -35,5 +35,4 @@ class PasswordViewSet(ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        if user:
-            Password.objects.filter(user=user)
+        return Password.objects.filter(user=user)
